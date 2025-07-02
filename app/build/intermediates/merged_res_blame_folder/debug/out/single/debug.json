@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.sohaibazmi.remote.app-merged_res-37:/layout_dummy.xml.flat",
+        "source": "com.sohaibazmi.remote.app-main-39:/layout/dummy.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-merged_res-37:/xml_file_paths.xml.flat",
+        "source": "com.sohaibazmi.remote.app-main-39:/xml/file_paths.xml"
+    }
+]

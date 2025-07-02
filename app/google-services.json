@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "680270924013",
+    "project_id": "remote-88548",
+    "storage_bucket": "remote-88548.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680270924013:android:58b3454f42de84106a64e4",
+        "android_client_info": {
+          "package_name": "com.sohaibazmi.remote"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf_Utyl9cLfvuX2cV0GrhRt_VgCi2o9fg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
