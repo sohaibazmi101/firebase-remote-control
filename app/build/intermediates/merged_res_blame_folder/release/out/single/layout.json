@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/dummy.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/dummy.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/activity_contact_developer.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/activity_contact_developer.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/activity_profile.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/activity_brute_force.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/activity_brute_force.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/activity_register.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/activity_news_sources.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/activity_news_sources.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/activity_games.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/activity_games.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/activity_login.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/activity_play_game.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/activity_play_game.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/activity_main.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/activity_quiz.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/activity_quiz.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/activity_market.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/activity_market.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeReleaseResources-44:/layout/activity_game_webview.xml",
+        "source": "com.sohaibazmi.remote.app-main-46:/layout/activity_game_webview.xml"
+    }
+]
