@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:text="📡 Nearby Wi-Fi Networks"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp" />
+
+    <LinearLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="16dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/scanningText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scanning..."
+            android:textSize="16sp"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/wifi_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/playGamesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🎮 Play Online Games"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_games"
+        app:iconSize="24dp"
+        app:iconPadding="8dp"
+        app:iconTint="@android:color/white"
+        android:backgroundTint="#FF6200EE"
+        android:layout_marginTop="20dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/marketButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📈 Market Live"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_market"
+        app:iconSize="24dp"
+        app:iconPadding="8dp"
+        app:iconTint="@android:color/white"
+        android:backgroundTint="#FF03DAC5"
+        android:layout_marginTop="16dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/newsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📰 News &amp; Updates"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_news"
+        app:iconSize="24dp"
+        app:iconPadding="8dp"
+        app:iconTint="@android:color/white"
+        android:backgroundTint="#FF018786"
+        android:layout_marginTop="16dp" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/playQuizButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🎯 Play Quiz &amp; Earn Money"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FF5722"
+        android:layout_marginTop="16dp"
+        app:cornerRadius="16dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/profileButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="👤 Profile"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FF5722"
+        android:layout_marginTop="16dp"
+        app:cornerRadius="16dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/contactButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📞 Contact Developer"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FF5722"
+        android:layout_marginTop="16dp"
+        app:cornerRadius="16dp" />
+
+
+</LinearLayout>

