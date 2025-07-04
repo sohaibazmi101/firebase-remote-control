@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.sohaibazmi.remote.app-mergeReleaseResources-43:/values-v31/values-v31.xml",
+            "outputFile": "com.sohaibazmi.remote.app-mergeReleaseResources-50:/values-v31/values-v31.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/transforms-3/e62b5bb5f215c598b39f47c0f71d0be2/transformed/material-1.11.0/res/values-v31/values-v31.xml",

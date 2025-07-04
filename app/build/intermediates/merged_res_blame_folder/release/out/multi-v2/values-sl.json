@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.sohaibazmi.remote.app-mergeReleaseResources-43:/values-sl/values-sl.xml",
+            "outputFile": "com.sohaibazmi.remote.app-mergeReleaseResources-50:/values-sl/values-sl.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/transforms-3/57d6288d8993a743f05a05aeb65fa548/transformed/jetified-play-services-basement-18.4.0/res/values-sl/values.xml",

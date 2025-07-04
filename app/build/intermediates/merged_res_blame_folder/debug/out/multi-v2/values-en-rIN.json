@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.sohaibazmi.remote.app-mergeDebugResources-43:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.sohaibazmi.remote.app-mergeDebugResources-50:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/transforms-3/e6c7522a0e3726b0e73dd27663d523de/transformed/jetified-credentials-1.2.0-rc01/res/values-en-rIN/values-en-rIN.xml",

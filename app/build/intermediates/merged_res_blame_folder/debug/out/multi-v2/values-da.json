@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.sohaibazmi.remote.app-mergeDebugResources-43:/values-da/values-da.xml",
+            "outputFile": "com.sohaibazmi.remote.app-mergeDebugResources-50:/values-da/values-da.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/transforms-3/e62b5bb5f215c598b39f47c0f71d0be2/transformed/material-1.11.0/res/values-da/values-da.xml",

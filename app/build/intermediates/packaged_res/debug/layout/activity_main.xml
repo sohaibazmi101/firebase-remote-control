@@ -114,6 +114,18 @@
         app:cornerRadius="16dp" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_scan_qr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scan QR"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FF5722"
+        android:layout_marginTop="16dp"
+        app:cornerRadius="16dp" />
+
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/contactButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.sohaibazmi.remote.app-mergeReleaseResources-43:/values-pt-rPT/values-pt-rPT.xml",
+            "outputFile": "com.sohaibazmi.remote.app-mergeReleaseResources-50:/values-pt-rPT/values-pt-rPT.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/transforms-3/e6c7522a0e3726b0e73dd27663d523de/transformed/jetified-credentials-1.2.0-rc01/res/values-pt-rPT/values-pt-rPT.xml",

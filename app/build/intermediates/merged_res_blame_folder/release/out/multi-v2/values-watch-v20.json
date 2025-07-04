@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.sohaibazmi.remote.app-mergeReleaseResources-43:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.sohaibazmi.remote.app-mergeReleaseResources-50:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/transforms-3/00c22488bc73f3459bf7ea7054f2496d/transformed/jetified-play-services-auth-21.1.0/res/values-watch-v20/values.xml",

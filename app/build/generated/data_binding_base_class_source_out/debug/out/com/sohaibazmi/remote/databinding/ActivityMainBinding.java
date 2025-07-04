@@ -23,6 +23,9 @@ public final class ActivityMainBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final MaterialButton btnScanQr;
+
+  @NonNull
   public final MaterialButton contactButton;
 
   @NonNull
@@ -52,13 +55,14 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final ListView wifiList;
 
-  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull MaterialButton contactButton,
-      @NonNull LinearLayout loadingLayout, @NonNull MaterialButton marketButton,
-      @NonNull MaterialButton newsButton, @NonNull MaterialButton playGamesButton,
-      @NonNull MaterialButton playQuizButton, @NonNull MaterialButton profileButton,
-      @NonNull ProgressBar progressBar, @NonNull TextView scanningText,
-      @NonNull ListView wifiList) {
+  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull MaterialButton btnScanQr,
+      @NonNull MaterialButton contactButton, @NonNull LinearLayout loadingLayout,
+      @NonNull MaterialButton marketButton, @NonNull MaterialButton newsButton,
+      @NonNull MaterialButton playGamesButton, @NonNull MaterialButton playQuizButton,
+      @NonNull MaterialButton profileButton, @NonNull ProgressBar progressBar,
+      @NonNull TextView scanningText, @NonNull ListView wifiList) {
     this.rootView = rootView;
+    this.btnScanQr = btnScanQr;
     this.contactButton = contactButton;
     this.loadingLayout = loadingLayout;
     this.marketButton = marketButton;
@@ -98,6 +102,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_scan_qr;
+      MaterialButton btnScanQr = ViewBindings.findChildViewById(rootView, id);
+      if (btnScanQr == null) {
+        break missingId;
+      }
+
       id = R.id.contactButton;
       MaterialButton contactButton = ViewBindings.findChildViewById(rootView, id);
       if (contactButton == null) {
@@ -158,9 +168,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((LinearLayout) rootView, contactButton, loadingLayout,
-          marketButton, newsButton, playGamesButton, playQuizButton, profileButton, progressBar,
-          scanningText, wifiList);
+      return new ActivityMainBinding((LinearLayout) rootView, btnScanQr, contactButton,
+          loadingLayout, marketButton, newsButton, playGamesButton, playQuizButton, profileButton,
+          progressBar, scanningText, wifiList);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.sohaibazmi.remote.app-mergeDebugResources-43:/values-ka/values-ka.xml",
+            "outputFile": "com.sohaibazmi.remote.app-mergeDebugResources-50:/values-ka/values-ka.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/transforms-3/e62b5bb5f215c598b39f47c0f71d0be2/transformed/material-1.11.0/res/values-ka/values-ka.xml",

