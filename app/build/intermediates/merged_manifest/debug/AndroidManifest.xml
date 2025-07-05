@@ -42,7 +42,6 @@
         android:icon="@android:drawable/ic_menu_camera"
         android:label="RemoteControl"
         android:roundIcon="@android:drawable/ic_menu_camera"
-        android:testOnly="true"
         android:theme="@style/Theme.MyApp"
         android:usesCleartextTraffic="true" >
 
