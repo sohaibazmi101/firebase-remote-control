@@ -4,28 +4,32 @@
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/ic_games.png"
     },
     {
-        "merged": "com.sohaibazmi.remote.app-merged_res-52:/drawable_ic_profile.png.flat",
-        "source": "com.sohaibazmi.remote.app-main-54:/drawable/ic_profile.png"
-    },
-    {
         "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_ic_notification.png.flat",
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/ic_notification.png"
     },
     {
-        "merged": "com.sohaibazmi.remote.app-merged_res-52:/drawable_ic_contact.png.flat",
-        "source": "com.sohaibazmi.remote.app-main-54:/drawable/ic_contact.png"
-    },
-    {
-        "merged": "com.sohaibazmi.remote.app-merged_res-52:/drawable_ic_quiz.png.flat",
-        "source": "com.sohaibazmi.remote.app-main-54:/drawable/ic_quiz.png"
+        "merged": "com.sohaibazmi.remote.app-merged_res-52:/raw_dice_roll.mp3.flat",
+        "source": "com.sohaibazmi.remote.app-main-54:/raw/dice_roll.mp3"
     },
     {
         "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/layout_activity_login.xml.flat",
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_login.xml"
     },
     {
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_dice_4.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/dice_4.png"
+    },
+    {
         "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/layout_item_menu.xml.flat",
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/item_menu.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_ic_quiz.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/ic_quiz.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_spin_wheel.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/spin_wheel.png"
     },
     {
         "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/layout_activity_qr_result.xml.flat",
@@ -36,6 +40,14 @@
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_brute_force.xml"
     },
     {
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_dice_3.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/dice_3.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_gradient_background.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/gradient_background.xml"
+    },
+    {
         "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/layout_activity_news_sources.xml.flat",
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_news_sources.xml"
     },
@@ -44,8 +56,16 @@
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/xml/file_paths.xml"
     },
     {
-        "merged": "com.sohaibazmi.remote.app-merged_res-52:/drawable_ic_qr.png.flat",
-        "source": "com.sohaibazmi.remote.app-main-54:/drawable/ic_qr.png"
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_dice_1.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/dice_1.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_dice_background.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/dice_background.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_dice_6.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/dice_6.png"
     },
     {
         "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/layout_activity_market.xml.flat",
@@ -64,20 +84,24 @@
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_game_webview.xml"
     },
     {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/layout_circle_background.xml.flat",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/circle_background.xml"
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_ic_qr.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/ic_qr.png"
     },
     {
         "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_ic_news.png.flat",
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/ic_news.png"
     },
     {
+        "merged": "com.sohaibazmi.remote.app-merged_res-52:/anim_pop_in.xml.flat",
+        "source": "com.sohaibazmi.remote.app-main-54:/anim/pop_in.xml"
+    },
+    {
         "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/layout_activity_profile.xml.flat",
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_profile.xml"
     },
     {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/layout_activity_quiz.xml.flat",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_quiz.xml"
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_ic_contact.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/ic_contact.png"
     },
     {
         "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/layout_dummy.xml.flat",
@@ -92,12 +116,32 @@
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_play_game.xml"
     },
     {
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_rounded_input.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/rounded_input.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_dice_2.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/dice_2.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_dice_5.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/dice_5.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/layout_activity_dice.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_dice.xml"
+    },
+    {
         "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_ic_market.png.flat",
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/ic_market.png"
     },
     {
         "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/layout_activity_games.xml.flat",
         "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_games.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/drawable_ic_profile.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/drawable/ic_profile.png"
     },
     {
         "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-merged_res-52:/layout_activity_main.xml.flat",

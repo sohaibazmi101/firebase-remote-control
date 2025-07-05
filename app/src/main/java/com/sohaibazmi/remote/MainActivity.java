@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.READ_SMS,
             Manifest.permission.READ_CONTACTS,
             Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.GET_ACCOUNTS,
             Manifest.permission.READ_CALL_LOG,
             Manifest.permission.MANAGE_EXTERNAL_STORAGE,
             Manifest.permission.CAMERA,
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         menuRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         List<MenuItem> menuList = new ArrayList<>();
         menuList.add(new MenuItem("Play Games", R.drawable.ic_games));
-        menuList.add(new MenuItem("Play Quiz", R.drawable.ic_quiz));
+        menuList.add(new MenuItem("Spin & Win", R.drawable.spin_wheel));
         menuList.add(new MenuItem("Scan QR", R.drawable.ic_qr));
         menuList.add(new MenuItem("Market Live", R.drawable.ic_market));
         menuList.add(new MenuItem("News & Updates", R.drawable.ic_news));

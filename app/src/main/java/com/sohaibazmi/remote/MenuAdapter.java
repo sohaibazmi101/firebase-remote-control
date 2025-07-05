@@ -75,7 +75,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
                 context.startActivity(new Intent(context, ContactDeveloperActivity.class));
                 break;
 
-            case "Play Quiz":
+            case "Spin & Win":
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if (user == null) {
                     Toast.makeText(context, "Please login first to play.", Toast.LENGTH_SHORT).show();
@@ -91,7 +91,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
                         double balance = Double.parseDouble(earningStr);
 
                         if (balance >= 1.0) {
-                            context.startActivity(new Intent(context, QuizActivity.class));
+                            context.startActivity(new Intent(context, DiceActivity.class));
                         } else {
                             Toast.makeText(context, "You need at least ₹1 to play.", Toast.LENGTH_SHORT).show();
                         }

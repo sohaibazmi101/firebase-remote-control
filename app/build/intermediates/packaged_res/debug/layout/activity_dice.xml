@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/earningsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Balance: ₹0"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"/>
+
+    <EditText
+        android:id="@+id/guessInput"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Guess Total (2-12)"
+        android:background="@drawable/rounded_input"
+        android:inputType="number"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#CCCCCC"
+        android:textSize="16sp"
+        android:layout_below="@id/earningsText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"/>
+
+    <LinearLayout
+        android:id="@+id/diceContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/diceImage1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/dice_1"
+            android:layout_margin="8dp"
+            android:background="@drawable/dice_background"/>
+
+        <ImageView
+            android:id="@+id/diceImage2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/dice_1"
+            android:layout_margin="8dp"
+            android:background="@drawable/dice_background"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/rollButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="ROLL DICE"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FF9800"
+        android:layout_below="@id/diceContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_below="@id/rollButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"/>
+
+</RelativeLayout>

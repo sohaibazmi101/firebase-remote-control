@@ -43,6 +43,7 @@ anim m3_side_sheet_exit_to_right
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim pop_in
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -2948,8 +2949,16 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dice_1
+drawable dice_2
+drawable dice_3
+drawable dice_4
+drawable dice_5
+drawable dice_6
+drawable dice_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable gradient_background
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3051,6 +3060,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable rounded_input
+drawable spin_wheel
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3194,6 +3205,9 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dialog_button
+id diceContainer
+id diceImage1
+id diceImage2
 id dimensions
 id direct
 id disableHome
@@ -3207,6 +3221,7 @@ id dragRight
 id dragStart
 id dragUp
 id dropdown_menu
+id earningsText
 id easeIn
 id easeInOut
 id easeOut
@@ -3251,6 +3266,7 @@ id graph
 id graph_wrap
 id group_divider
 id groups
+id guessInput
 id header_title
 id hide_ime_id
 id hideable
@@ -3361,7 +3377,6 @@ id navigation_bar_item_small_label_view
 id navigation_header_container
 id never
 id newsListView
-id nextButton
 id noScroll
 id none
 id normal
@@ -3385,10 +3400,6 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
-id optionA
-id optionB
-id optionC
-id optionD
 id outline
 id outward
 id packed
@@ -3413,7 +3424,6 @@ id pressed
 id profileText
 id progress_circular
 id progress_horizontal
-id questionText
 id radio
 id ratio
 id rectangles
@@ -3425,6 +3435,7 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id rollButton
 id rounded
 id row_index_key
 id save_non_transition_alpha
@@ -3514,7 +3525,6 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
-id timerText
 id title
 id titleDividerNoCustom
 id titleText
@@ -3667,6 +3677,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_brute_force
 layout activity_contact_developer
+layout activity_dice
 layout activity_game_webview
 layout activity_games
 layout activity_login
@@ -3676,7 +3687,6 @@ layout activity_news_sources
 layout activity_play_game
 layout activity_profile
 layout activity_qr_result
-layout activity_quiz
 layout activity_register
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -3762,6 +3772,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 plurals mtrl_badge_content_description
+raw dice_roll
 raw firebase_common_keep
 string abc_action_bar_home_description
 string abc_action_bar_up_description
