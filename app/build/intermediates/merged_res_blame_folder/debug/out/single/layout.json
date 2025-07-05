@@ -1,58 +1,66 @@
 [
     {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_game_webview.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_game_webview.xml"
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_play_game.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_play_game.xml"
     },
     {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/dummy.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/dummy.xml"
-    },
-    {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_market.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_market.xml"
-    },
-    {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_games.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_games.xml"
-    },
-    {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_play_game.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_play_game.xml"
-    },
-    {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_login.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_login.xml"
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/item_menu.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/item_menu.xml"
     },
     {
         "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_qr_result.xml",
         "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_qr_result.xml"
     },
     {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_contact_developer.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_contact_developer.xml"
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/circle_background.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/circle_background.xml"
     },
     {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_register.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_register.xml"
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_market.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_market.xml"
     },
     {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_news_sources.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_news_sources.xml"
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_contact_developer.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_contact_developer.xml"
     },
     {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_main.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_main.xml"
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_game_webview.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_game_webview.xml"
     },
     {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_quiz.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_quiz.xml"
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_brute_force.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_brute_force.xml"
     },
     {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_brute_force.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_brute_force.xml"
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_register.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_register.xml"
     },
     {
-        "merged": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_profile.xml",
-        "source": "/Users/apple/.gradle/daemon/8.2/com.sohaibazmi.remote.app-main-54:/layout/activity_profile.xml"
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_quiz.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_quiz.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_games.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_games.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/dummy.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/dummy.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_main.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_profile.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_news_sources.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_news_sources.xml"
+    },
+    {
+        "merged": "com.sohaibazmi.remote.app-mergeDebugResources-51:/layout/activity_login.xml",
+        "source": "com.sohaibazmi.remote.app-main-54:/layout/activity_login.xml"
     }
 ]

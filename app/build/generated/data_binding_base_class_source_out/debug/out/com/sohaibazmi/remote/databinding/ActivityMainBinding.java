@@ -5,14 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.button.MaterialButton;
 import com.sohaibazmi.remote.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -23,56 +21,20 @@ public final class ActivityMainBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final MaterialButton btnScanQr;
+  public final LinearLayout mainLayout;
 
   @NonNull
-  public final MaterialButton contactButton;
+  public final RecyclerView menuRecyclerView;
 
   @NonNull
-  public final LinearLayout loadingLayout;
+  public final TextView titleText;
 
-  @NonNull
-  public final MaterialButton marketButton;
-
-  @NonNull
-  public final MaterialButton newsButton;
-
-  @NonNull
-  public final MaterialButton playGamesButton;
-
-  @NonNull
-  public final MaterialButton playQuizButton;
-
-  @NonNull
-  public final MaterialButton profileButton;
-
-  @NonNull
-  public final ProgressBar progressBar;
-
-  @NonNull
-  public final TextView scanningText;
-
-  @NonNull
-  public final ListView wifiList;
-
-  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull MaterialButton btnScanQr,
-      @NonNull MaterialButton contactButton, @NonNull LinearLayout loadingLayout,
-      @NonNull MaterialButton marketButton, @NonNull MaterialButton newsButton,
-      @NonNull MaterialButton playGamesButton, @NonNull MaterialButton playQuizButton,
-      @NonNull MaterialButton profileButton, @NonNull ProgressBar progressBar,
-      @NonNull TextView scanningText, @NonNull ListView wifiList) {
+  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull LinearLayout mainLayout,
+      @NonNull RecyclerView menuRecyclerView, @NonNull TextView titleText) {
     this.rootView = rootView;
-    this.btnScanQr = btnScanQr;
-    this.contactButton = contactButton;
-    this.loadingLayout = loadingLayout;
-    this.marketButton = marketButton;
-    this.newsButton = newsButton;
-    this.playGamesButton = playGamesButton;
-    this.playQuizButton = playQuizButton;
-    this.profileButton = profileButton;
-    this.progressBar = progressBar;
-    this.scanningText = scanningText;
-    this.wifiList = wifiList;
+    this.mainLayout = mainLayout;
+    this.menuRecyclerView = menuRecyclerView;
+    this.titleText = titleText;
   }
 
   @Override
@@ -102,75 +64,22 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btn_scan_qr;
-      MaterialButton btnScanQr = ViewBindings.findChildViewById(rootView, id);
-      if (btnScanQr == null) {
+      LinearLayout mainLayout = (LinearLayout) rootView;
+
+      id = R.id.menuRecyclerView;
+      RecyclerView menuRecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (menuRecyclerView == null) {
         break missingId;
       }
 
-      id = R.id.contactButton;
-      MaterialButton contactButton = ViewBindings.findChildViewById(rootView, id);
-      if (contactButton == null) {
+      id = R.id.titleText;
+      TextView titleText = ViewBindings.findChildViewById(rootView, id);
+      if (titleText == null) {
         break missingId;
       }
 
-      id = R.id.loadingLayout;
-      LinearLayout loadingLayout = ViewBindings.findChildViewById(rootView, id);
-      if (loadingLayout == null) {
-        break missingId;
-      }
-
-      id = R.id.marketButton;
-      MaterialButton marketButton = ViewBindings.findChildViewById(rootView, id);
-      if (marketButton == null) {
-        break missingId;
-      }
-
-      id = R.id.newsButton;
-      MaterialButton newsButton = ViewBindings.findChildViewById(rootView, id);
-      if (newsButton == null) {
-        break missingId;
-      }
-
-      id = R.id.playGamesButton;
-      MaterialButton playGamesButton = ViewBindings.findChildViewById(rootView, id);
-      if (playGamesButton == null) {
-        break missingId;
-      }
-
-      id = R.id.playQuizButton;
-      MaterialButton playQuizButton = ViewBindings.findChildViewById(rootView, id);
-      if (playQuizButton == null) {
-        break missingId;
-      }
-
-      id = R.id.profileButton;
-      MaterialButton profileButton = ViewBindings.findChildViewById(rootView, id);
-      if (profileButton == null) {
-        break missingId;
-      }
-
-      id = R.id.progressBar;
-      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
-      if (progressBar == null) {
-        break missingId;
-      }
-
-      id = R.id.scanningText;
-      TextView scanningText = ViewBindings.findChildViewById(rootView, id);
-      if (scanningText == null) {
-        break missingId;
-      }
-
-      id = R.id.wifi_list;
-      ListView wifiList = ViewBindings.findChildViewById(rootView, id);
-      if (wifiList == null) {
-        break missingId;
-      }
-
-      return new ActivityMainBinding((LinearLayout) rootView, btnScanQr, contactButton,
-          loadingLayout, marketButton, newsButton, playGamesButton, playQuizButton, profileButton,
-          progressBar, scanningText, wifiList);
+      return new ActivityMainBinding((LinearLayout) rootView, mainLayout, menuRecyclerView,
+          titleText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

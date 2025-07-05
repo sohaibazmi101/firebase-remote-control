@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:2:1-105:12
-INJECTED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:2:1-105:12
-INJECTED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:2:1-105:12
-INJECTED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:2:1-105:12
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:2:1-97:12
+INJECTED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:2:1-97:12
+INJECTED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:2:1-97:12
+INJECTED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:2:1-97:12
 MERGED from [androidx.databinding:viewbinding:8.2.0] /Users/apple/.gradle/caches/transforms-3/6efc00b1fa3704b1d482c75a90cf292d/transformed/jetified-viewbinding-8.2.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/apple/.gradle/caches/transforms-3/c93e209741527a513cf5fd5fef36a6a2/transformed/jetified-firebase-database-21.0.0/AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.android.gms:play-services-location:21.0.1] /Users/apple/.gradle/caches/transforms-3/ff13ccdf5ec7f02e129c86fa4d730980/transformed/jetified-play-services-location-21.0.1/AndroidManifest.xml:2:1-9:12
@@ -128,60 +128,44 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /User
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/apple/.gradle/caches/transforms-3/3e30efcb91c76c309d16b5859481c340/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:25:5-67
 	android:name
 		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:7:22-64
-uses-permission#android.permission.CAMERA
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:8:5-65
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:8:22-62
-uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:9:5-76
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:9:22-73
-uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:10:5-76
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:10:22-73
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:11:5-79
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:11:22-76
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:12:5-81
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:12:22-78
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:13:5-81
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:8:5-81
 MERGED from [androidx.work:work-runtime:2.9.0] /Users/apple/.gradle/caches/transforms-3/301f72618dcadaa202f1f1e0df87218f/transformed/work-runtime-2.9.0/AndroidManifest.xml:25:5-81
 MERGED from [androidx.work:work-runtime:2.9.0] /Users/apple/.gradle/caches/transforms-3/301f72618dcadaa202f1f1e0df87218f/transformed/work-runtime-2.9.0/AndroidManifest.xml:25:5-81
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:13:22-78
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:8:22-78
 uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:14:5-77
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:9:5-77
 MERGED from [androidx.work:work-runtime:2.9.0] /Users/apple/.gradle/caches/transforms-3/301f72618dcadaa202f1f1e0df87218f/transformed/work-runtime-2.9.0/AndroidManifest.xml:26:5-77
 MERGED from [androidx.work:work-runtime:2.9.0] /Users/apple/.gradle/caches/transforms-3/301f72618dcadaa202f1f1e0df87218f/transformed/work-runtime-2.9.0/AndroidManifest.xml:26:5-77
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:14:22-74
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:9:22-74
 uses-permission#android.permission.READ_SMS
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:15:5-67
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:10:5-67
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:15:22-64
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:10:22-64
+uses-permission#android.permission.CAMERA
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:11:5-65
+	android:name
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:11:22-62
 uses-permission#android.permission.READ_CONTACTS
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:16:5-72
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:12:5-72
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:16:22-69
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:12:22-69
 uses-permission#android.permission.READ_CALL_LOG
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:17:5-72
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:13:5-72
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:17:22-69
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:13:22-69
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:18:5-80
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:14:5-80
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:18:22-77
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:14:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:19:5-81
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:15:5-81
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:19:22-78
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:15:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:20:5-78
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:16:5-78
 MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/apple/.gradle/caches/transforms-3/c93e209741527a513cf5fd5fef36a6a2/transformed/jetified-firebase-database-21.0.0/AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/apple/.gradle/caches/transforms-3/c93e209741527a513cf5fd5fef36a6a2/transformed/jetified-firebase-database-21.0.0/AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-auth:23.2.1] /Users/apple/.gradle/caches/transforms-3/bb0a1c2ea292567d956eb2bf3243a6a2/transformed/jetified-firebase-auth-23.2.1/AndroidManifest.xml:26:5-79
@@ -201,28 +185,28 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /User
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/apple/.gradle/caches/transforms-3/25ddc27f623e5a1c75fd99987a5366a4/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:22:5-79
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/apple/.gradle/caches/transforms-3/25ddc27f623e5a1c75fd99987a5366a4/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:20:22-76
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:16:22-76
 uses-permission#android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:21:5-94
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:17:5-94
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:21:22-92
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:17:22-92
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:22:5-71
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:18:5-71
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:22:22-68
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:18:22-68
 uses-permission#android.permission.FOREGROUND_SERVICE_DATA_SYNC
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:23:5-87
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:19:5-87
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:23:22-84
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:19:22-84
 uses-permission#android.permission.MANAGE_EXTERNAL_STORAGE
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:24:5-25:40
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:20:5-21:40
 	tools:ignore
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:25:9-37
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:21:9-37
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:24:22-79
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:20:22-79
 application
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:27:5-104:19
-INJECTED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:27:5-104:19
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:23:5-96:19
+INJECTED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:23:5-96:19
 MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/apple/.gradle/caches/transforms-3/c93e209741527a513cf5fd5fef36a6a2/transformed/jetified-firebase-database-21.0.0/AndroidManifest.xml:25:5-36:19
 MERGED from [com.google.firebase:firebase-database:21.0.0] /Users/apple/.gradle/caches/transforms-3/c93e209741527a513cf5fd5fef36a6a2/transformed/jetified-firebase-database-21.0.0/AndroidManifest.xml:25:5-36:19
 MERGED from [com.google.android.gms:play-services-location:21.0.1] /Users/apple/.gradle/caches/transforms-3/ff13ccdf5ec7f02e129c86fa4d730980/transformed/jetified-play-services-location-21.0.1/AndroidManifest.xml:7:5-20
@@ -306,125 +290,119 @@ MERGED from [com.google.android.play:core-common:2.0.3] /Users/apple/.gradle/cac
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] /Users/apple/.gradle/caches/transforms-3/f04ba187cfd10d583a086e03b3f245eb/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:30:9-38
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:26:9-38
 	android:roundIcon
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:32:9-61
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:28:9-61
 	android:icon
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:31:9-56
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:27:9-56
 	android:allowBackup
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:29:9-35
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:25:9-35
 	android:theme
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:28:9-43
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:24:9-43
 	android:usesCleartextTraffic
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:33:9-44
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:29:9-44
 activity#com.sohaibazmi.remote.MainActivity
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:36:9-43:20
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:32:9-39:20
 	android:exported
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:38:13-36
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:34:13-36
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:37:13-41
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:33:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:39:13-42:29
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:35:13-38:29
 action#android.intent.action.MAIN
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:40:17-69
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:36:17-69
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:40:25-66
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:36:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:41:17-77
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:37:17-77
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:41:27-74
-activity#com.sohaibazmi.remote.BruteForceActivity
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:45:9-47:72
-	android:theme
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:47:13-69
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:46:13-47
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:37:27-74
 activity#com.sohaibazmi.remote.GamesActivity
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:42:9-51
+	android:name
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:42:19-48
+activity#com.sohaibazmi.remote.GameWebViewActivity
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:43:9-57
+	android:name
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:43:19-54
+activity#com.sohaibazmi.remote.MarketActivity
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:44:9-52
+	android:name
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:44:19-49
+activity#com.sohaibazmi.remote.NewsSourcesActivity
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:45:9-57
+	android:name
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:45:19-54
+activity#com.sohaibazmi.remote.ContactDeveloperActivity
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:46:9-62
+	android:name
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:46:19-59
+activity#com.sohaibazmi.remote.QuizActivity
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:47:9-50
+	android:name
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:47:19-47
+activity#com.sohaibazmi.remote.ProfileActivity
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:48:9-53
+	android:name
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:48:19-50
+activity#com.sohaibazmi.remote.RegisterActivity
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:49:9-54
+	android:name
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:49:19-51
+activity#com.sohaibazmi.remote.LoginActivity
 ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:50:9-51
 	android:name
 		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:50:19-48
-activity#com.sohaibazmi.remote.GameWebViewActivity
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:51:9-57
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:51:19-54
-activity#com.sohaibazmi.remote.MarketActivity
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:52:9-52
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:52:19-49
-activity#com.sohaibazmi.remote.NewsSourcesActivity
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:53:9-57
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:53:19-54
-activity#com.sohaibazmi.remote.ContactDeveloperActivity
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:54:9-62
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:54:19-59
-activity#com.sohaibazmi.remote.QuizActivity
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:55:9-50
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:55:19-47
-activity#com.sohaibazmi.remote.ProfileActivity
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:56:9-53
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:56:19-50
-activity#com.sohaibazmi.remote.RegisterActivity
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:57:9-54
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:57:19-51
-activity#com.sohaibazmi.remote.LoginActivity
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:58:9-51
-	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:58:19-48
 activity#com.sohaibazmi.remote.QRScannerActivity
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:59:9-55
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:51:9-55
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:59:19-52
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:51:19-52
 activity#com.sohaibazmi.remote.QRResultActivity
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:60:9-54
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:52:9-54
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:60:19-51
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:52:19-51
 service#com.sohaibazmi.remote.RemoteService
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:64:9-68:56
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:56:9-60:56
 	android:enabled
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:66:13-35
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:58:13-35
 	android:exported
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:67:13-37
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:59:13-37
 	android:foregroundServiceType
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:68:13-53
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:60:13-53
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:65:13-42
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:57:13-42
 service#com.sohaibazmi.remote.MyFirebaseMessagingService
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:71:9-76:19
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:63:9-68:19
 	android:exported
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:72:13-37
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:64:13-37
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:71:18-60
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:63:18-60
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:73:13-75:29
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:65:13-67:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:74:17-77
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:66:17-77
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:74:25-75
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:66:25-75
 receiver#com.sohaibazmi.remote.BootReceiver
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:87:9-94:20
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:79:9-86:20
 	android:enabled
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:89:13-35
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:81:13-35
 	android:exported
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:90:13-36
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:82:13-36
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:88:13-41
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:80:13-41
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:91:13-93:29
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:83:13-85:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:92:17-79
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:84:17-79
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:92:25-76
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:84:25-76
 meta-data#firebase_analytics_collection_enabled
-ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:99:9-101:37
+ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:91:9-93:37
 	android:value
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:101:13-34
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:93:13-34
 	android:name
-		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:100:13-65
+		ADDED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml:92:13-65
 uses-sdk
 INJECTED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/apple/Downloads/firebase-remote-control/app/src/main/AndroidManifest.xml

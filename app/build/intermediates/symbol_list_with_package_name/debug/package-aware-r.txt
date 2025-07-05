@@ -2923,6 +2923,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable circle_background
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -2958,6 +2959,7 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_contact
 drawable ic_games
 drawable ic_keyboard_black_24dp
 drawable ic_m3_chip_check
@@ -2973,6 +2975,9 @@ drawable ic_notification
 drawable ic_other_sign_in
 drawable ic_passkey
 drawable ic_password
+drawable ic_profile
+drawable ic_qr
+drawable ic_quiz
 drawable ic_search_black_24
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3144,7 +3149,6 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
-id btn_scan_qr
 id buttonPanel
 id cancel_button
 id center
@@ -3166,7 +3170,6 @@ id collapseActionView
 id compatible
 id compress
 id confirm_button
-id contactButton
 id container
 id content
 id contentPanel
@@ -3280,11 +3283,10 @@ id line3
 id linear
 id listMode
 id list_item
-id loadingLayout
 id loginButton
 id logoutButton
 id m3_side_sheet
-id marketButton
+id mainLayout
 id marketWebView
 id marquee
 id masked
@@ -3310,6 +3312,9 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id menuIcon
+id menuRecyclerView
+id menuTitle
 id message
 id messageInput
 id middle
@@ -3355,7 +3360,6 @@ id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_header_container
 id never
-id newsButton
 id newsListView
 id nextButton
 id noScroll
@@ -3403,14 +3407,10 @@ id performance
 id phishingWebView
 id phoneField
 id pin
-id playGamesButton
-id playQuizButton
 id position
 id postLayout
 id pressed
-id profileButton
 id profileText
-id progressBar
 id progress_circular
 id progress_horizontal
 id questionText
@@ -3431,7 +3431,6 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
-id scanningText
 id screen
 id scroll
 id scrollIndicatorDown
@@ -3518,6 +3517,7 @@ id time
 id timerText
 id title
 id titleDividerNoCustom
+id titleText
 id title_template
 id toggle
 id top
@@ -3545,7 +3545,6 @@ id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
 id wide
-id wifi_list
 id withText
 id with_icon
 id withinBounds
@@ -3700,6 +3699,7 @@ layout design_text_input_start_icon
 layout dummy
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_menu
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
